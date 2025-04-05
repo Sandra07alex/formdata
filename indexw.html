@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WhatsApp Chat Trigger</title>
+</head>
+<body>
+
+  <h2>Send WhatsApp Message</h2>
+  <label>Name: <input type="text" id="name" /></label><br />
+  <label>Email: <input type="email" id="email" /></label><br />
+  <label>Phone: <input type="text" id="phone" /></label><br /><br />
+
+  <button onclick="sendToWhatsApp()">Chat on WhatsApp</button>
+
+  <script>
+    function sendToWhatsApp() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+
+      const phoneNumber = "9037846438"; // ← Replace with your WhatsApp number
+
+      const message = `Hello, I'm interested to give work.\n\nHere are my details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappURL, "_blank");
+    }
+  </script>
+
+</body>
+</html>
